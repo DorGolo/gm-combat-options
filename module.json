@@ -9,6 +9,6 @@
   },
   "authors": [{ "name": "Working Minotaur" }],
   "esmodules": ["scripts/main.js"],
-  "manifest": "https://your-repo-url/raw/main/module.json",
-  "download": "https://your-repo-url/releases/latest/download.zip"
+  "manifest": "https://raw.githubusercontent.com/DorGolo/gm-combat-options/refs/heads/main/module.json",
+  "download": "https://github.com/DorGolo/gm-combat-options/releases/latest/download/gm-combat-options.zip"
 }
