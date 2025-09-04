@@ -15,24 +15,22 @@ Hooks.once("init", () => {
 Hooks.on("renderCombatTracker", (app, html, data) => {
   const allowPlayers = game.settings.get("player-end-turn", "allowPlayers");
 
-  // If setting is on, don’t do anything
   if (allowPlayers) return;
 
-  // If user is a GM, nothing changes
+  // If user is GM, don’t touch anything
   if (game.user.isGM) return;
 
-  // Find the current combatant's turn controls
-  html.find(".combatant").each((i, li) => {
-    const combatantId = li.dataset.combatantId;
-    const combatant = game.combat.combatants.get(combatantId);
+    const endTurnBtns = html.querySelectorAll(".combat-control[data-action='nextTurn']");
+    if (endTurnBtns) {
 
-    // Only affect the player's own combatant
-    if (!combatant?.isOwner) return;
-
-    // Find "End Turn" button
-    const endTurnBtn = li.querySelector(".combatant-control[data-control='nextTurn']");
-    if (endTurnBtn) {
-      endTurnBtn.style.display = "none"; // Ensure visible
+      
+      endTurnBtns.forEach(element => {
+        element.style.display = "none";
+      });
     }
-  });
+
+    const previousTurnBtn = html.querySelector(".combat-control[data-action='previousTurn']");
+    if (previousTurnBtn) {
+      previousTurnBtn.style.display = "none";
+    }
 });
