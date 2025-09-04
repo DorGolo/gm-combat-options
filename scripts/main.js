@@ -15,8 +15,8 @@ Hooks.once("init", () => {
 Hooks.on("renderCombatTracker", (app, html, data) => {
   const allowPlayers = game.settings.get("player-end-turn", "allowPlayers");
 
-  // If setting is off, don’t do anything
-  if (!allowPlayers) return;
+  // If setting is on, don’t do anything
+  if (allowPlayers) return;
 
   // If user is a GM, nothing changes
   if (game.user.isGM) return;
@@ -32,7 +32,7 @@ Hooks.on("renderCombatTracker", (app, html, data) => {
     // Find "End Turn" button
     const endTurnBtn = li.querySelector(".combatant-control[data-control='nextTurn']");
     if (endTurnBtn) {
-      endTurnBtn.style.display = "inline-block"; // Ensure visible
+      endTurnBtn.style.display = "none"; // Ensure visible
     }
   });
 });
