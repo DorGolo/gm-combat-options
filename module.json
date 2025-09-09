@@ -2,10 +2,10 @@
   "id": "minotaur-combat-options",
   "title": "Minotaur Workshop Combat Options",
   "description": "Allows players to end their own turns in combat if the GM enables it.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "compatibility": {
-    "minimum": "12",
-    "verified": "12.331"
+    "minimum": "13",
+    "verified": "13.348"
   },
   "authors": [{ "name": "Working Minotaur" }],
   "esmodules": ["scripts/main.js"],
